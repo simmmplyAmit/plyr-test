@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Plyr Demo</title>
+		<link rel="stylesheet" href="node_modules/plyr/dist/plyr.css" />
+		<style>
+			.container {
+				max-width: 800px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<video
+				id="player"
+				playsinline
+				controls
+				data-poster="https://i.pinimg.com/originals/4f/35/48/4f3548cfe9febe816574417507292893.jpg"
+			>
+				<source src="student1-720.mp4" type="video/mp4" size="720" />
+				<source src="student1-360.mp4" type="video/mp4" size="360" />
+				<source src="/path/to/video.webm" type="video/webm" />
+
+				<!-- Captions are optional -->
+				<track
+					kind="captions"
+					label="English captions"
+					src="student1.vtt"
+					srclang="en"
+					default
+				/>
+			</video>
+		</div>
+		<script src="node_modules/plyr/dist/plyr.polyfilled.min.js"></script>
+		<script>
+			const player = new Plyr("#player");
+		</script>
+	</body>
+</html>
